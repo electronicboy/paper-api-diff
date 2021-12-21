@@ -53,11 +53,11 @@ mkdir "${workdir}"
 cd "${workdir}"
 
 # download requirements
-curl -L -o jdiff.zip https://pilotfiber.dl.sourceforge.net/project/javadiff/javadiff/jdiff%20"${jdiff_version}"/jdiff-"${jdiff_version}".zip
+curl -L -o jdiff.zip https://sourceforge.net/projects/javadiff/files/javadiff/jdiff%20"${jdiff_version}"/jdiff-"${jdiff_version}".zip/download?use_mirror=master\&download=\&failedmirror=pilotfiber.dl.sourceforge.net
 unzip jdiff.zip
 
 # gen xml for paper
-get_maven_sources 'https://papermc.io/repo' 3 'com.destroystokyo.paper' 'paper-api' paper-sources.jar
+get_maven_sources 'https://papermc.io/repo' 3 'io.papermc.paper' 'paper-api' paper-sources.jar
 unzip paper-sources.jar -d paper-sources
 mkdir paper
 echo "package io.papermc.paper;" > paper-sources/io/papermc/paper/package-info.java
